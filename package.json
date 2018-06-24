@@ -1,0 +1,53 @@
+{
+  "name": "master-enumerator",
+  "version": "1.0.0",
+  "description": "Allows users to harness psuedo-enumerator data types",
+  "main": "./build/dist/index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "test": "npm run lint && npm run cover",
+    "test:prod": "cross-env NODE_ENV=production npm run test",
+    "cover": "istanbul cover _mocha -- --recursive",
+    "lint": "eslint src test",
+    "build": "cross-env NODE_ENV=production gulp",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
+  },
+  "files": [
+    "build/dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bRRRITSCOLD/master-enumerator.git"
+  },
+  "keywords": [
+    "enumerator",
+    "npm",
+    "module",
+    "node",
+    "javascript"
+  ],
+  "author": "Blaine Richardson <blainerrichardson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bRRRITSCOLD/master-enumerator/issues"
+  },
+  "homepage": "https://github.com/bRRRITSCOLD/master-enumerator#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "chai": "^4.1.2",
+    "cross-env": "^5.1.3",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "gulp": "^4.0.0",
+    "gulp-jsonminify": "^1.1.0",
+    "gulp-minify": "^3.0.2",
+    "istanbul": "^1.0.0-alpha",
+    "mocha": "^5.0.0"
+  },
+  "dependencies": {
+    "gulp-rimraf": "^0.2.2"
+  }
+}
