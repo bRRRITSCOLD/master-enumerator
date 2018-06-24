@@ -78,8 +78,19 @@ gulp.task('transfer:json', (done) => {
     });
 });
 
+gulp.task('transfer:build', (done) => {
+  gulp.src('build/dist/*')
+    .pipe(gulp.dest('dist'))
+    .on('end', () => {
+      done();
+    })
+    .on('error', (err) => {
+      done(err);
+    });
+});
+
 gulp.task('clean:post', (done) => {
-  del(['build/tmp'], done());
+  del(['build/tmp', 'build/dist', 'build'], done());
 });
 
 gulp.task('default', gulp.series(
@@ -89,5 +100,6 @@ gulp.task('default', gulp.series(
   'compress:json',
   'transfer:js',
   'transfer:json',
+  'transfer:build',
   'clean:post'
 ));

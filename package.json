@@ -2,9 +2,9 @@
   "name": "master-enumerator",
   "version": "1.0.0",
   "description": "Allows users to harness psuedo-enumerator data types",
-  "main": "./index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "clean": "rimraf build",
+    "clean": "rimraf dist",
     "test": "npm run lint && npm run cover",
     "test:prod": "cross-env NODE_ENV=production npm run test",
     "cover": "istanbul cover _mocha -- --recursive",
@@ -13,7 +13,7 @@
     "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
   },
   "files": [
-    "build/dist"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -44,10 +44,8 @@
     "gulp": "^4.0.0",
     "gulp-jsonminify": "^1.1.0",
     "gulp-minify": "^3.0.2",
+    "gulp-rimraf": "^0.2.2",
     "istanbul": "^1.0.0-alpha",
     "mocha": "^5.0.0"
-  },
-  "dependencies": {
-    "gulp-rimraf": "^0.2.2"
   }
 }
