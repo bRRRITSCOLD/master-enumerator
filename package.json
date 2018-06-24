@@ -1,8 +1,8 @@
 {
   "name": "master-enumerator",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Allows users to harness psuedo-enumerator data types",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "scripts": {
     "clean": "rimraf dist",
     "test": "npm run lint && npm run cover",
@@ -13,7 +13,10 @@
     "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
   },
   "files": [
-    "dist"
+    "dist/index.js",
+    "dist/LICENSE",
+    "dist/package.json",
+    "dist/README.md"
   ],
   "repository": {
     "type": "git",
