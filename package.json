@@ -2,7 +2,7 @@
   "name": "master-enumerator",
   "version": "1.0.0",
   "description": "Allows users to harness psuedo-enumerator data types",
-  "main": "./build/dist/index.js",
+  "main": "./index.js",
   "scripts": {
     "clean": "rimraf build",
     "test": "npm run lint && npm run cover",
