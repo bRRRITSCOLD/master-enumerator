@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const minify = require('gulp-minify');
-const jsonminify = require('gulp-jsonminify');
 const del = require('del'); //eslint-disable-line
 
 gulp.task('compress:js', (done) => {

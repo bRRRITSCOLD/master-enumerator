@@ -22,23 +22,6 @@ class Enumerator {
     this._caseSensitive = options.caseSensitive ? options.caseSensitive : false;
 
     /**
-     * defining the getter methods
-     * correlatinf to the desired
-     * enumeration values defined
-     * by the user for the given
-     * Enumerator instance - dependent
-     * on case sensitivity setting
-     */
-    for (let i = 0; i < array.length; i++) {
-      Object.defineProperty(this, `${array[i].toUpperCase()}`, {
-        get: () => {
-          if (this._caseSensitive === true) return `${array[i]}`;
-          if (this._caseSensitive === false) return `${array[i].toUpperCase()}`;
-        }
-      });
-    }
-
-    /**
      * initiate a instance property
      * of enumerations as an empty array
      * before filling it with a dictionary
@@ -48,11 +31,31 @@ class Enumerator {
     this.enumerations = [];
 
     /**
-     * intiate objects to fill enumerations array with -
-     * they configured object is decided upon by the
-     * case sensitivity of the Enumerator data-type
+     * loop through array passed in to constructor
+     * to perform more mutations, manipulations, documentations
+     * of the data within the data-type/class instance
      */
     for (let i = 0; i < array.length; i++) {
+      /**
+       * defining the getter methods
+       * correlatinf to the desired
+       * enumeration values defined
+       * by the user for the given
+       * Enumerator instance - dependent
+       * on case sensitivity setting
+       */
+      Object.defineProperty(this, `${array[i].toUpperCase()}`, {
+        get: () => {
+          if (this._caseSensitive === true) return `${array[i]}`;
+          if (this._caseSensitive === false) return `${array[i].toUpperCase()}`;
+        }
+      });
+
+      /**
+       * intiate objects to fill enumerations array with -
+       * they configured object is decided upon by the
+       * case sensitivity of the Enumerator data-type
+       */
       if (this._caseSensitive === true) {
         this.enumerations.push({
           key: `${array[i].toUpperCase()}`,
