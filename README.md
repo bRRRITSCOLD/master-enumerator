@@ -127,7 +127,7 @@ This method allows you to check an array of values against your psude-enumerator
 ```js
 const enumerator = new Enumerator(array[], options?{ caseSensitive: boolean });
 
-enumerator.validValues('array');
+enumerator.validValues(array[]);
 ```
 
 Example:
