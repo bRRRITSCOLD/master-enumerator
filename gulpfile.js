@@ -1,28 +1,8 @@
 const gulp = require('gulp');
-const minify = require('gulp-minify');
 const del = require('del'); //eslint-disable-line
 
-gulp.task('compress:js', (done) => {
-  gulp.src('src/*.js')
-    .pipe(minify({
-      ext: {
-        src: '-debug.txt',
-        min: '.js'
-      },
-      exclude: ['tasks'],
-      ignoreFiles: ['.combo.js', '-min.js']
-    }))
-    .pipe(gulp.dest('build/tmp'))
-    .on('end', () => {
-      done();
-    })
-    .on('error', (err) => {
-      done(err);
-    });
-});
-
 gulp.task('transfer:js', (done) => {
-  gulp.src('build/tmp/*.js')
+  gulp.src('src/*.js')
     .pipe(gulp.dest('build/dist'))
     .on('end', () => {
       done();
@@ -48,7 +28,6 @@ gulp.task('clean:post', (done) => {
 });
 
 gulp.task('default', gulp.series(
-  'compress:js',
   'transfer:js',
   'transfer:build',
   'clean:post'
