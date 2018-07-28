@@ -93,6 +93,38 @@ describe('lib/types', () => {
             });
           });
         });
+        describe('#validValues(array)', () => {
+          context(`(['ONE', 'one'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['ONE', 'one']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+          context(`(['TWO', 'Two'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['TWO', 'Two']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+          context(`(['THREE', 'tHrEe'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['THREE', 'tHrEe']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+        });
         describe('#enumerationKeys()', () => {
           context(`()`, () => {
             it(`- should return array of all the enumeration's keys that are used to retrieve the Enumeration instance's values`, done => {
@@ -204,6 +236,38 @@ describe('lib/types', () => {
               expect(enumerator.validValue('tHrEe')).to.eq(true);
               expect(result).to.be.true;
               expect(result).to.eq(true);
+              done();
+            });
+          });
+        });
+        describe('#validValues(array)', () => {
+          context(`(['ONE', 'one'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['ONE', 'one']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+          context(`(['TWO', 'Two'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['TWO', 'Two']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+          context(`(['THREE', 'tHrEe'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['THREE', 'tHrEe']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
               done();
             });
           });
@@ -323,6 +387,38 @@ describe('lib/types', () => {
             });
           });
         });
+        describe('#validValues(array)', () => {
+          context(`(['ONE', 'one'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['ONE', 'one']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+          context(`(['TWO', 'Two'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['TWO', 'Two']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+          context(`(['THREE', 'tHrEe'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['THREE', 'tHrEe']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+        });
         describe('#enumerationKeys()', () => {
           context(`()`, () => {
             it(`- should return array of all the enumeration's keys that are used to retrieve the Enumeration instance's values`, done => {
@@ -434,6 +530,38 @@ describe('lib/types', () => {
               expect(enumerator.validValue('THREE')).to.eq(true);
               expect(result).to.be.true;
               expect(result).to.eq(true);
+              done();
+            });
+          });
+        });
+        describe('#validValues(array)', () => {
+          context(`(['ONE', 'one'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['ONE', 'one']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.false;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+          context(`(['TWO', 'tWo'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['TWO', 'tWo']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.false;
+              expect(result[1]).to.be.true;
+              done();
+            });
+          });
+          context(`(['THREE', 'tHrEe'])`, () => {
+            it('- should return an object with an invalid and valid array housing the valid and invalid (respectively) values that were passed in in the array', done => {
+              const result = enumerator.validValues(['THREE', 'tHrEe']);
+              expect(result instanceof Array).to.be.true;
+              expect(result.length).to.eq(2);
+              expect(result[0]).to.be.true;
+              expect(result[1]).to.be.false;
               done();
             });
           });
