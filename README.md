@@ -106,8 +106,8 @@ const { Enumerator } = require('master-enumerator');
 const enumerator = new Enumerator([ 'one', 'two', 'three' ]);
 
 enumerator.validValue('one'); // output: true
-enumerator.validValue('One'); // output: false
-enumerator.validValue('ONE'); // output: false
+enumerator.validValue('One'); // output: true
+enumerator.validValue('ONE'); // output: true
 ```
 
 ```js
@@ -118,6 +118,34 @@ const enumerator = new Enumerator([ 'one', 'tWo', 'THREE' ], { caseSensitive: tr
 enumerator.validValue('tWo'); // output: true
 enumerator.validValue('TWO'); // output: false
 enumerator.validValue('two'); // output: false
+```
+
+### validValues:
+
+This method allows you to check an array of values against your psude-enumerator data type, returning an array with booleans - `true` if the value in the same exact index location in the passed in array is a correlating type/value of this enumerator and `false` if it is not.
+
+```js
+const enumerator = new Enumerator(array[], options?{ caseSensitive: boolean });
+
+enumerator.validValues('array');
+```
+
+Example:
+
+```js
+const { Enumerator } = require('master-enumerator');
+
+const enumerator = new Enumerator([ 'one', 'two', 'three' ]);
+
+enumerator.validValues(['one', 'One', 'ONE']); // output: [true, true, true]
+```
+
+```js
+const { Enumerator } = require('master-enumerator');
+
+const enumerator = new Enumerator([ 'one', 'two', 'three' ], { caseSensitive: true });
+
+enumerator.validValues(['one', 'One', 'ONE']); // output: [true, false, false]
 ```
 
 ### enumerationKeys():
